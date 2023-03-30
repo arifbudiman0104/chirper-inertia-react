@@ -30,8 +30,9 @@ export default function Index({ auth, chirps }) {
                 <form onSubmit={submit}>
                     <textarea
                         value={data.message}
+                        rows="3"
                         placeholder="What's on your mind?"
-                        className="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
+                        className="block w-full text-gray-900 dark:text-gray-300 placeholder:text-gray-900 dark:placeholder:text-gray-300 border-gray-300 dark:border-gray-900 bg-white dark:bg-gray-800 focus:border-indigo-300 dark:focus:border-indigo-500 focus:ring focus:ring-indigo-200 dark:focus:ring-indigo-400 focus:ring-opacity-50 rounded-md shadow-sm"
                         onChange={(e) => setData("message", e.target.value)}
                     ></textarea>
                     <InputError message={errors.message} className="mt-2" />
@@ -39,7 +40,7 @@ export default function Index({ auth, chirps }) {
                         Chirp
                     </PrimaryButton>
                 </form>
-                <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
+                <div className="mt-6 bg-white dark:bg-gray-800 shadow-sm rounded-lg divide-y dark:divide-gray-900">
                     {chirps.map(chirp =>
                         <Chirp key={chirp.id} chirp={chirp} />
                     )}
