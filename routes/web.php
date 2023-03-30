@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     // Chirp Routes
     Route::resource('/chirps', ChirpController::class)
-    ->only(['index', 'store', 'update']);
+    ->only(['index', 'store', 'update', 'destroy']);
 });
 
 require __DIR__ . '/auth.php';
